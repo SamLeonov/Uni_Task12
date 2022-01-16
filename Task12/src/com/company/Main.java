@@ -1,12 +1,25 @@
 package com.company;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        Scanner scan = new Scanner(System.in);
         ArrayList<Point> points = new ArrayList<>();
-        
+        int[][] array = ArrayUtils.readIntArray2FromFile("files/file.txt");
+        System.out.println("enter x coordinate: ");
+        int x = scan.nextInt();
+        System.out.println("enter y coordinate: ");
+        int y = scan.nextInt();
+        Point start = new Point(x,y);
+        points.add(start);
+        System.out.println("enter number of turns: ");
+        int n = scan.nextInt();
+        allPoints(points,array,n);
+        for (Point i: points) {
+            System.out.println(i.toString());
+        }
     }
 
     public static void allPoints (ArrayList<Point> points, int[][] array, int n) {
