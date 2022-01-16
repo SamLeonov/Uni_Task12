@@ -6,8 +6,8 @@ public class Checker {
     private int[][] array;
     private Point start;
 
-    public Checker(ArrayList<Point> points, int[][] array, Point start) {
-        this.points = points;
+    public Checker(int[][] array, Point start) {
+        this.points = new ArrayList<>();
         this.array = array;
         this.start = start;
 
@@ -64,10 +64,18 @@ public class Checker {
 
     public ArrayList<Point> check() {
         ArrayList<Point> result = new ArrayList<>();
-        result.addAll(this.checkRight());
-        result.addAll(this.checkLeft());
-        result.addAll(this.checkUp());
-        result.addAll(this.checkDown());
+        if (!(this.checkRight().isEmpty())) {
+            result.addAll(this.checkRight());
+        }
+        if (!(this.checkLeft().isEmpty())) {
+            result.addAll(this.checkLeft());
+        }
+        if (!(this.checkUp().isEmpty())) {
+            result.addAll(this.checkUp());
+        }
+        if (!(this.checkDown().isEmpty())) {
+            result.addAll(this.checkDown());
+        }
         return result;
     }
 }
