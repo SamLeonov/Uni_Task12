@@ -7,12 +7,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int[][] array = ArrayUtils.readIntArray2FromFile("files/file.txt");
-        System.out.println("enter column: ");
-        char c = scan.next().charAt(0);
-        int x = (int)c - 65;
-        System.out.println("enter row: ");
+        System.out.println("enter x coordinate: ");
+        int x = scan.nextInt();
+        x--;
+        System.out.println("enter y coordinate: ");
         int y = scan.nextInt();
-        y=8-y;
+        y=array.length-y;
         Point start = new Point(x,y);
         System.out.println("enter number of turns: ");
         int n = scan.nextInt();
