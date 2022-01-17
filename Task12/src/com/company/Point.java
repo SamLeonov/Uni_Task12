@@ -10,6 +10,7 @@ public class Point {
     }
     @Override
     public String toString() {
-        return ("("+this.x+", "+this.y+")");
+        String x = Character.toString((char)this.x+65);
+        return (x+this.y);
     }
 }
