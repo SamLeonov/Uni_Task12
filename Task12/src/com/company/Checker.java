@@ -18,8 +18,10 @@ public class Checker {
         int y = start.y + addy;
         if (y>=0 && y<array.length) {
             if (x>=0 && x<array[y].length) {
-                Point result = new Point (x,y);
-                return result;
+                if (array[y][x]!=1) {
+                    Point result = new Point(x, y);
+                    return result;
+                }
             }
         }
         return null;
